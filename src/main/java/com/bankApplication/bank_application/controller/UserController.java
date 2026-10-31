@@ -17,10 +17,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    public ResponseEntity<String> Home(){
-        return ResponseEntity.ok("Spring Boot Backend is Live know on Vercel🚀✅");
-    }
-
     @Operation(
             summary = "Create New User Account",
             description = "Creating a new user and assigning an account ID"
