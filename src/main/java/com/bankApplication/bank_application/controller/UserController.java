@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,6 +16,10 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+    public ResponseEntity<String> Home(){
+        return ResponseEntity.ok("Spring Boot Backend is Live know on Vercel🚀✅");
+    }
 
     @Operation(
             summary = "Create New User Account",
