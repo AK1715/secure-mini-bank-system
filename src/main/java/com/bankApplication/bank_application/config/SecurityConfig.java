@@ -30,7 +30,8 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity){
         httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize ->
-                        authorize.requestMatchers(HttpMethod.POST, "/api/user").permitAll()
+                        authorize.requestMatchers(HttpMethod.GET, "/").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/user").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/api/user/login").permitAll()
                                 .requestMatchers("/v3/api-docs/**",
                                         "/swagger-ui/**",
